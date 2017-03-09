@@ -4,7 +4,8 @@
 
 class Controleur{
       
-        private vue:Vue; 
+    private vue: Vue;
+    private co: Connexion;
 
 
             constructor()
@@ -16,10 +17,12 @@ class Controleur{
             }
 
             checkIdent(lg:string,mdp:string)
-            {
-                var co = new Connexion(lg, mdp);
-                co.initialiser(this);
-                co.request();
+            {               
+                this.co = new Connexion(lg, mdp);
+                this.co.initialiser(this);
+                this.co.request();
+                this.co.isConnected();
+               
             }
 
             sendRes(b: boolean)
@@ -27,4 +30,8 @@ class Controleur{
                 this.vue.conneted(b);
             }
 
+            deconnexion()
+            { this.co.close(); }
+
+            
 }

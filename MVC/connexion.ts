@@ -25,12 +25,36 @@ class Connexion
             method: "POST",
             data: { username: that.login, password: that.mdp },
             dataType: "JSON",
-            success: (resultat) => { that.ctrl.sendRes(resultat), console.log(resultat); },
-            error: (error) => { console.log("Erreur php"); }
+            success: (resultat) => { that.ctrl.sendRes(resultat); },
+            error: (error) => { console.log(error); }
 
         });      
                 
 
+    }
+
+    isConnected()
+    {
+        var req = $.ajax({
+            url: "php/checkSession.php",
+            method: "POST",
+            dataType: "JSON",
+            success: (resultat) => { console.log(resultat); },
+            error: (error) => { console.log(error); }
+
+        });     
+    }
+
+    close()
+    {
+        
+        var req = $.ajax({
+            url: "php/finSession.php",
+            success: (resultat) => { console.log("Deconnexion"); },
+            error: (error) => { console.log("Erreur deconnexion"); }
+
+        });     
+        
     }
 
 

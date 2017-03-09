@@ -7,12 +7,14 @@ var Controleur = (function () {
         this.vue = v;
     };
     Controleur.prototype.checkIdent = function (lg, mdp) {
-        var co = new Connexion(lg, mdp);
-        co.initialiser(this);
-        co.request();
+        this.co = new Connexion(lg, mdp);
+        this.co.initialiser(this);
+        this.co.request();
+        this.co.isConnected();
     };
     Controleur.prototype.sendRes = function (b) {
         this.vue.conneted(b);
     };
+    Controleur.prototype.deconnexion = function () { this.co.close(); };
     return Controleur;
 }());

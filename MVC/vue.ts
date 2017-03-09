@@ -10,15 +10,22 @@ class Vue {
     constructor(c: Controleur) {
         this.ctrl = c;
         this.validate();
+        
+
     }
 
     validate() {
         var that = this;
-        $("#bt").click(function () {
+        $("#bt").click(function (event) {
+            event.preventDefault();
             that.log = $("#log").val();
-            that.mdp = $("#mdp").val();
-            console.log(that.log, that.mdp);   
+            that.mdp = $("#mdp").val(); 
             that.ctrl.checkIdent(that.log, that.mdp);        
+        });
+
+        $("#bt_2").click(function (event) {
+            event.preventDefault();
+            that.ctrl.deconnexion();
         });
         
     }

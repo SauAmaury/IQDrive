@@ -7,11 +7,15 @@ var Vue = (function () {
     }
     Vue.prototype.validate = function () {
         var that = this;
-        $("#bt").click(function () {
+        $("#bt").click(function (event) {
+            event.preventDefault();
             that.log = $("#log").val();
             that.mdp = $("#mdp").val();
-            console.log(that.log, that.mdp);
             that.ctrl.checkIdent(that.log, that.mdp);
+        });
+        $("#bt_2").click(function (event) {
+            event.preventDefault();
+            that.ctrl.deconnexion();
         });
     };
     Vue.prototype.conneted = function (b) {
