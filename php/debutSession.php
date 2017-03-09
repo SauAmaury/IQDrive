@@ -9,6 +9,8 @@ $res = false;
     $mdpconnect = $_POST['password'];
 
 
+
+
 $user = $bdd->getConnexion()->prepare("SELECT * FROM member WHERE login = ? AND password = ?");
 
        $user->execute(array($pseudoconnect,$mdpconnect));
@@ -24,10 +26,10 @@ $user = $bdd->getConnexion()->prepare("SELECT * FROM member WHERE login = ? AND 
        else
        {
            $res = false;
+
        }
 
        echo json_encode($res);
 
-       session_destroy();
 
 ?>
