@@ -3,29 +3,40 @@
 
 <head>
 	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Connexion à IQDrive !</title>
 	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="style/css/login.css">
 	
 
 </head>
 
-<body class="container">
+<body>
 
-	<header class="row">
-		<h1 class="col-xs-12">Test de session</h1>
-		<form id="f" class = "row" method="POST" >
-			<label> Identifiant <input class="col-xs-3" id="log" type="text" name="login"/> </label>
-			<br/>
-			<label> Mot de passe <input class="col-xs-3" id="mdp" type="text" name="mdp"/></label>
-			<br/>
-			<input class="col-xs-3" id="bt" type="submit" value="Connexion" name="ok"/>
-            <input class="col-xs-3" id="bt_2" type="submit" value="Deconnexion" name="ko" />
-		</form>
-        <script src="lib/jquery-3.1.1.js"></script>
-		<script src ="MVC/controleur.js"></script>
-        <script src="MVC/connexion.js"></script>
-        <script src="MVC/vue.js"></script>
-        <script src="MVC/main.js"></script>
-	
 
-	</header></body></html>
+    <div class="container">
+
+        <form class="form-login">
+            <h2 class="form-login-heading">Bienvenue à IQDrive ! </h2>
+
+          
+
+            <input class="form-control" id="log" type="text" name="login" placeholder="Identifiant" />
+            <input class="form-control" id="mdp" type="text" name="mdp" placeholder="Mot de passe" /></label>
+            <br />
+            <input class="btn btn-lg btn-primary btn-block" id="bt" type="submit" value="Connexion" name="ok" />
+    </div>
+   
+
+
+    </form>
+
+    <script src="lib/jquery-3.1.1.js"></script>
+    <script src="MVC/controleur.js"></script>
+    <script src="MVC/connexion.js"></script>
+    <script src="MVC/vue.js"></script>
+    <script src="MVC/main.js"></script>
+
+</body>
+
+</html>
