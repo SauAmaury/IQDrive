@@ -1,4 +1,5 @@
 ///<reference path="Affichable.ts"/>
+
 class AfficheurPrincipal implements Affichable
 {
 
@@ -16,7 +17,7 @@ class AfficheurPrincipal implements Affichable
 
 	public traitementReinitialiser(): void
 	{
-		let that: AfficheurPrincipal = this;
+		let that = this;
 		setTimeout(that.reinitialiser, 3000);
 	}
 

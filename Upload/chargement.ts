@@ -1,4 +1,5 @@
 ///<reference path="Affichable.ts"/>
+///<reference path="formulaire.ts"/>
 ///<reference path="Deroutable.ts"/>
 ///<reference path="AfficheurPrincipal.ts"/>
 class Chargement implements Deroutable

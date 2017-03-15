@@ -2,7 +2,7 @@
 
 if(isset($_FILES['fichier']))
 {
-	$dir = 'fichiers';
+	$dir = __DIR__.'/../fichiers';
 	$nom = $_FILES['fichier']['name'];
 	if(move_uploaded_file($_FILES['fichier']['tmp_name'], "$dir/$nom"))
 	{
