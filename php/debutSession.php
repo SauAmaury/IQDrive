@@ -11,9 +11,12 @@ $res = false;
 
 
 
-$user = $bdd->getConnexion()->prepare("SELECT * FROM member WHERE login = ? AND password = ?");
+$user = $bdd->getConnexion()->prepare("SELECT * FROM member WHERE login = :login AND password = :password");
 
-       $user->execute(array($pseudoconnect,$mdpconnect));
+    $user->bindParam(":login",$pseudoconnect);
+    $user->bindParam(":password",$mdpconnect);
+    $user->execute();
+
        $getRow = $user->rowCount();
 
        if ($getRow == 1)
