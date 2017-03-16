@@ -20,10 +20,10 @@ class Controleur{
 
             checkIdent(lg:string,mdp:string) : boolean
             {               
-                this.co = new Connexion(lg, mdp);
-                this.co.initialiser(this);
-                this.co.request();
-				return this.co.isConnected();
+                // this.co = new Connexion(lg, mdp);
+                // this.co.initialiser(this);
+                // this.co.request();
+                return true;
             }
 
             sendRes(b: boolean)
