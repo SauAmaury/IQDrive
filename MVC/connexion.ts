@@ -27,27 +27,24 @@ class Connexion
             dataType: "JSON",
             success: (resultat) => { that.ctrl.sendRes(resultat); },
             error: (error) => { console.log(error); }
-
         });      
-                
-
     }
 
     isConnected()
     {
+		let res: boolean = false;
         var req = $.ajax({
             url: "php/checkSession.php",
             method: "POST",
             dataType: "JSON",
-            success: (resultat) => { console.log(resultat); },
+            success: (resultat) => { console.log(resultat); res = true; },
             error: (error) => { console.log(error); }
-
         });     
+        return res;
     }
 
     close()
     {
-        
         var req = $.ajax({
             url: "php/finSession.php",
             success: (resultat) => { console.log("Deconnexion"); },
@@ -56,6 +53,5 @@ class Connexion
         });     
         
     }
-
 
 }

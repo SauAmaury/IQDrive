@@ -1,0 +1,4 @@
+interface Deroutable
+{
+	traitementParallele(): void;
+}
