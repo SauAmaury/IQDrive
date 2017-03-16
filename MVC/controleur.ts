@@ -20,9 +20,9 @@ class Controleur{
 
             checkIdent(lg:string,mdp:string) : boolean
             {               
-                // this.co = new Connexion(lg, mdp);
-                // this.co.initialiser(this);
-                // this.co.request();
+                this.co = new Connexion(lg, mdp);
+                this.co.initialiser(this);
+                this.co.request();
                 return true;
             }
 
