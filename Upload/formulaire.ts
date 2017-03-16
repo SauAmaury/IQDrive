@@ -1,3 +1,5 @@
+///<reference path="Deroutable.ts"/>
+
 class Formulaire
 {
 	private _formulaire;
