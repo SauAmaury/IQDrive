@@ -14,7 +14,7 @@ class Vue {
     }
 
     validate() {
-        var that = this;
+        let that = this;
         $("#bt").click(function (event) {
             event.preventDefault();
             that.log = $("#log").val();
