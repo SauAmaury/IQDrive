@@ -11,8 +11,6 @@ class Vue {
     constructor(c: Controleur) {
         this.ctrl = c;
         this.validate();
-        
-
     }
 
     validate() {
@@ -21,7 +19,13 @@ class Vue {
             event.preventDefault();
             that.log = $("#log").val();
             that.mdp = $("#mdp").val(); 
-            that.ctrl.checkIdent(that.log, that.mdp);        
+            if(that.ctrl.checkIdent(that.log, that.mdp))        
+            {
+                //lancer la page d'upload
+            }else{
+                //Penser a un traitement genre inscription
+                //ou depot de plainte au pres du procureur de la republique
+            }
         });
 
         $("#bt_2").click(function (event) {

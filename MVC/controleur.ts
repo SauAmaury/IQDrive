@@ -1,6 +1,7 @@
 /// <reference path="../lib/jquery.d.ts" />
 /// <reference path="../lib/jqueryui.d.ts" />
 ///<reference path="connexion.ts"/>
+///<reference path="vue.ts"/>
 
 
 class Controleur{
@@ -17,13 +18,12 @@ class Controleur{
                 this.vue = v;
             }
 
-            checkIdent(lg:string,mdp:string)
+            checkIdent(lg:string,mdp:string) : boolean
             {               
                 this.co = new Connexion(lg, mdp);
                 this.co.initialiser(this);
                 this.co.request();
-                this.co.isConnected();
-               
+				return this.co.isConnected();
             }
 
             sendRes(b: boolean)
