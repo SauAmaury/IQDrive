@@ -2,12 +2,13 @@
 /// <reference path="../lib/jqueryui.d.ts" />
 ///<reference path="connexion.ts"/>
 ///<reference path="vue.ts"/>
+///<reference path="../Mock/FakeBDD.ts"/>
 
 
 class Controleur{
       
     private vue: Vue;
-    private co: Connexion;
+    private co: IConnexion;
 
 
             constructor()
@@ -20,7 +21,7 @@ class Controleur{
 
             checkIdent(lg:string,mdp:string) : boolean
             {               
-                this.co = new Connexion(lg, mdp);
+                this.co = new FakeBDD(lg, mdp);
                 this.co.initialiser(this);
                 this.co.request();
                 return true;

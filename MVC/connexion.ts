@@ -1,8 +1,10 @@
 /// <reference path="../lib/jquery.d.ts" />
 /// <reference path="../lib/jqueryui.d.ts" />
+/// <reference path="controleur.ts"/>
+///<reference path="IConnexion.ts"/>
 
 
-class Connexion
+class Connexion implements IConnexion
 {
     private login: string;
     private mdp: string;
@@ -14,10 +16,10 @@ class Connexion
         this.mdp = m;
     }
 
-    initialiser(c: Controleur)
+    initialiser(c: Controleur) : void
     { this.ctrl = c; }
 
-    request()
+    request() : void
     {
         let that = this;
         let req = $.ajax({
