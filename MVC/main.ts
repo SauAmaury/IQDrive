@@ -1,4 +1,7 @@
-﻿/**
+﻿///<reference path="controleur.ts"/>
+///<reference path="vue.ts"/>
+
+/**
  * Application
  */
 class Main

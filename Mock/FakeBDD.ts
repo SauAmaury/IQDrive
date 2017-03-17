@@ -1,3 +1,6 @@
+///<reference path="../MVC/IConnexion.ts"/>
+///<reference path="../MVC/controleur.ts"/>
+
 class FakeBDD implements IConnexion {
   private ctrl: Controleur;
 

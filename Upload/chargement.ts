@@ -32,7 +32,9 @@ class Chargement implements Deroutable
 			data: contenu,
 			success: (s) => {
 				let afficheur: Affichable = new AfficheurPrincipal();
-				afficheur.afficher(s);
+				let sub: string = s;
+				sub = sub.substr(1, sub.length-2);
+				afficheur.afficher(sub);
 			},
 			error: (err) => {
 				console.log(err);

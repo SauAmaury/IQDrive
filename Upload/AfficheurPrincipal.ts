@@ -18,12 +18,9 @@ class AfficheurPrincipal implements Affichable
 	public traitementReinitialiser(): void
 	{
 		let that = this;
-		setTimeout(that.reinitialiser, 3000);
+		setTimeout(()=>{
+			$('#affichage').text("");
+		}, 3000);
 	}
 
-	public	reinitialiser(): void
-	{
-		$(this.id).text("");
-		console.log('Texte reinitialise');
-	}
 }
