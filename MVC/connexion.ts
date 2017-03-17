@@ -19,8 +19,8 @@ class Connexion
 
     request()
     {
-        var that = this;
-        var req = $.ajax({
+        let that = this;
+        let req = $.ajax({
             url: "php/debutSession.php",
             method: "POST",
             data: { username: that.login, password: that.mdp },
@@ -30,10 +30,10 @@ class Connexion
         });      
     }
 
-    isConnected()
+    isConnected(): boolean
     {
 		let res: boolean = false;
-        var req = $.ajax({
+        let req = $.ajax({
             url: "php/checkSession.php",
             method: "POST",
             dataType: "JSON",
@@ -45,7 +45,7 @@ class Connexion
 
     close()
     {
-        var req = $.ajax({
+        let req = $.ajax({
             url: "php/finSession.php",
             success: (resultat) => { console.log("Deconnexion"); },
             error: (error) => { console.log("Erreur deconnexion"); }

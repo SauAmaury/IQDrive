@@ -26,7 +26,7 @@ class Vue {
             console.log("Connection failed, bad login or password ?")
 
           }
-        });
+       });
 
     $("#bt_2")
         .click(function(event) {
