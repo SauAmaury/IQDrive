@@ -23,7 +23,7 @@ class Connexion implements IConnexion
     {
         let that = this;
         let req = $.ajax({
-            url: "php/debutSession.php",
+            url: "../php/debutSession.php",
             method: "POST",
             data: { username: that.login, password: that.mdp },
             dataType: "JSON",
@@ -36,7 +36,7 @@ class Connexion implements IConnexion
     {
 		let res: boolean = false;
         let req = $.ajax({
-            url: "php/checkSession.php",
+            url: "../php/checkSession.php",
             method: "POST",
             dataType: "JSON",
             success: (resultat) => { console.log(resultat); res = true; },
