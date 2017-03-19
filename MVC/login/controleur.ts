@@ -19,17 +19,21 @@ class Controleur{
                 this.vue = v;
             }
 
-            checkIdent(lg:string,mdp:string) : boolean
+            checkIdent(lg:string,mdp:string) 
             {               
                 this.co = new FakeBDD(lg, mdp);
                 this.co.initialiser(this);
-                this.co.request();
-                return true;
+                this.co.request();                
             }
 
             sendRes(b: boolean)
             {
                 this.vue.conneted(b);
+                if (b)
+                {
+                    //Lancer le controleur du dashboard
+                    window.location.href = "../html/dashboard.html";
+                }
             }
 
             deconnexion()

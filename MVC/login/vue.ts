@@ -19,13 +19,7 @@ class Vue {
           event.preventDefault();
           that.log = $("#log").val();
           that.mdp = $("#mdp").val();
-          if (that.ctrl.checkIdent(that.log, that.mdp)) {
-            window.location.href = "../MVC/Upload/index.html"
-            // lancer la page d'upload
-          } else {
-            console.log("Connection failed, bad login or password ?")
-
-          }
+          that.ctrl.checkIdent(that.log, that.mdp)
        });
 
     $("#bt_2")
