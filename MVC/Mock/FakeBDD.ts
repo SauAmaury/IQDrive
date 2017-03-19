@@ -1,5 +1,5 @@
-///<reference path="../MVC/IConnexion.ts"/>
-///<reference path="../MVC/controleur.ts"/>
+///<reference path="../login/IConnexion.ts"/>
+///<reference path="../login/controleur.ts"/>
 
 class FakeBDD implements IConnexion {
   private ctrl: Controleur;

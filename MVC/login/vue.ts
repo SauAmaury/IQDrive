@@ -1,5 +1,5 @@
-/// <reference path="../lib/jquery.d.ts" />
-/// <reference path="../lib/jqueryui.d.ts" />
+/// <reference path="../../lib/jquery.d.ts" />
+/// <reference path="../../lib/jqueryui.d.ts" />
 ///<reference path="controleur.ts"/>
 
 class Vue {
@@ -20,7 +20,7 @@ class Vue {
           that.log = $("#log").val();
           that.mdp = $("#mdp").val();
           if (that.ctrl.checkIdent(that.log, that.mdp)) {
-            window.location.href = "Upload/index.html"
+            window.location.href = "../MVC/Upload/index.html"
             // lancer la page d'upload
           } else {
             console.log("Connection failed, bad login or password ?")
