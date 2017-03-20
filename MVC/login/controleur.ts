@@ -5,7 +5,7 @@
 ///<reference path="../Mock/FakeBDD.ts"/>
 
 
-class Controleur{
+class Controleur implements IControleur{
       
     private vue: Vue;
     private co: IConnexion;

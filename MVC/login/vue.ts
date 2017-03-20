@@ -2,7 +2,7 @@
 /// <reference path="../../lib/jqueryui.d.ts" />
 ///<reference path="controleur.ts"/>
 
-class Vue {
+class Vue implements IVue {
   private ctrl: Controleur;
   private log: string;
   private mdp: string;
