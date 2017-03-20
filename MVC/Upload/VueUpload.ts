@@ -1,10 +1,13 @@
 ///<reference path="chargement.ts"/>
 ///<reference path="formulaire.ts"/>
+///<reference path="../IControleur.ts"/>
+///<reference path="../IVue.ts"/>
 
-class VueUpload
+class VueUpload implements IVue
 {
 	private _chargement: Chargement;
 	private _pbDeco: BouttonDeconnexion;
+	private ctrl: IControleur;
 
 	constructor()
 	{
