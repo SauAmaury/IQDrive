@@ -13,13 +13,43 @@ class VueUpload implements IVue
 	constructor(private ctrl: IControleur)
 	{
 		this.initEvenements();
+		this.raffraichir();
 		this.ctrl = ctrl;
 	}
 
-	initEvenements()
+	public initEvenements() : void
 	{
 		this._pbDeco = new BouttonDeconnexion('#deco');
 		this._chargement = new Chargement(new Formulaire('#frm'));
 		this._chargement.TraiterChargement();
 	}
+
+	public raffraichir() : void
+	{
+		let that: VueUpload= this;
+		$.ajax({
+			url: '../../php/lister.php',
+			method: 'post',
+			dataType: 'json',
+			success: (data)=>{
+				that.decouperString(data).forEach(element => {
+					$('#liste').append(element);
+				});
+			},
+			error: (err)=>{
+				console.log(err);
+			}
+			
+		});
+	}
+
+	public decouperString(liste: string): string[]
+	{
+		let listeTraitee: string[] = liste.split(',');
+		return listeTraitee;
+
+	}
+	
+
+
 }
