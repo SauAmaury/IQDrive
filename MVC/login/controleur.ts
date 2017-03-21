@@ -5,7 +5,7 @@
 ///<reference path="../Mock/FakeBDD.ts"/>
 
 
-class Controleur implements IControleur{
+class Controleur implements IControleur {
       
     private vue: Vue;
     private co: IConnexion;
@@ -31,7 +31,6 @@ class Controleur implements IControleur{
                 this.vue.conneted(b);
                 if (b)
                 {
-                    //Lancer le controleur du dashboard
                     window.location.href = "../html/dashboard.html";
                 }
             }
