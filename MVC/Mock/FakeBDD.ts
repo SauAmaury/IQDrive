@@ -11,5 +11,5 @@ class FakeBDD implements IConnexion {
   request(): void { this.ctrl.sendRes(true); }
 
   isConnected(): boolean { return true; }
-  close(): void {}
+
 }

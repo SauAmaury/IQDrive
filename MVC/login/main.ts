@@ -1,32 +1,23 @@
 ﻿///<reference path="controleur.ts"/>
 ///<reference path="vue.ts"/>
 
-/**
- * Application
- */
+
 class Main
 {
-  /**
-   * Constroleur principal de l'application
-   */
-  private controleur: Controleur;
+ 
+    private controleur: Controleur;
+    private vue: Vue;
 
-  /**
-   * Vue principale de l'application
-   */
-  private vue: Vue;
-
-  /**
-   * Constructeur
-   */
+  
   constructor()
   {
+   
+      
       this.controleur = new Controleur();
       this.vue = new Vue(this.controleur);
-
-	this.controleur.initialiser(this.vue);
+	  this.controleur.initialiser(this.vue);
   }
 }
 
-//Démarrage de l'application lorsque la page aura fini de se charger
+
 $(window).ready(() => { var main:Main = new Main(); });

@@ -9,6 +9,7 @@ class Vue_dash implements IVue {
     constructor(c: Controleur_dash)
     {
         this.Controleur_dash = c;
+        this.evenement();
         
     }
 
@@ -16,7 +17,7 @@ class Vue_dash implements IVue {
     {
         let that = this;
         $("#lg").click(function () {
-           //deconnexion        
+            that.Controleur_dash.deconnexion();       
         });
 
     }

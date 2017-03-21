@@ -1,14 +1,11 @@
 /// <reference path="../../lib/jquery.d.ts" />
 /// <reference path="../../lib/jqueryui.d.ts" />
 
-
-
 class controleur_session {
 
-    private session: boolean = false;
 
     constructor()
-    { this.verifier(); }
+    {  }
 
     verifier() : void
     {
@@ -17,19 +14,43 @@ class controleur_session {
                 url: "../php/checkSession.php",
                 method: "POST",
                 dataType: "JSON",
-                success: (resultat) => {that.action(resultat); },
+                success: (resultat) => {that.etat(resultat); },
                 error: (error) => { console.log(error); }
             });
            
     }
 
-    action(b: boolean): void
+    etat(b: boolean): boolean
     {
-        if (!b) { window.location.href = "../html/login.html"; }
-        console.log(b);
-        
+        this.verifier();
+        return b;
     }
 
+    login() : void
+    {
+        if (this.etat)
+        {
+            window.location.href = "../html/dashboard.html";
+        }
+    }
+
+    dashboard() : void
+    {
+        if (!this.etat) {
+            window.location.href = "../html/login.html";
+        }
+    }
+
+    finSession() : void
+    {
+        let req = $.ajax({
+            url: "php/finSession.php",
+            success: (resultat) => { console.log("Deconnexion"); },
+            error: (error) => { console.log("Erreur deconnexion"); }
+
+        });
+        window.location.href = "../html/login.html";
+    }
 
            
             

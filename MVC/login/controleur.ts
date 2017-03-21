@@ -6,7 +6,8 @@
 
 
 class Controleur implements IControleur {
-      
+
+    private controleursession: controleur_session;   
     private vue: Vue;
     private co: IConnexion;
 
@@ -17,11 +18,13 @@ class Controleur implements IControleur {
             initialiser(v: Vue)
             {
                 this.vue = v;
+                this.controleursession = new controleur_session();
+                this.controleursession.login();
             }
 
             checkIdent(lg:string,mdp:string) 
-            {               
-                this.co = new FakeBDD(lg, mdp);
+            {
+                this.co = new Connexion(lg, mdp);
                 this.co.initialiser(this);
                 this.co.request();                
             }
