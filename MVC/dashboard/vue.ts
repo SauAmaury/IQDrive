@@ -10,6 +10,10 @@ class Vue_dash implements IVue {
     {
         this.Controleur_dash = c;
         this.evenement();
+        $("#onglet-1").show();
+        console.log("Montrer 1");
+        $("#onglet-2").hide();
+        console.log("Cacher 2");
         
     }
 
@@ -20,10 +24,20 @@ class Vue_dash implements IVue {
             that.Controleur_dash.deconnexion();       
         });
 
+                        
+        $("#main,#main2").click(function(){
+            $("#onglet-1").show();
+            console.log("Montrer 1");
+            $("#onglet-2").hide();
+            console.log("Cacher 2");
+        });
 
-        $("#onglet-1").show();
-        $("#onglet-2").hide();
-        $("#onglet-3").hide();
+        $("#user,#user2").click(function () {
+            $("#onglet-1").hide();
+            console.log("Montrer 2");
+            $("#onglet-2").show();
+            console.log("Cacher 1");
+        });
 
     }
 
