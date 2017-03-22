@@ -20,6 +20,11 @@ class Vue_dash implements IVue {
             that.Controleur_dash.deconnexion();       
         });
 
+
+        $("#onglet-1").show();
+        $("#onglet-2").hide();
+        $("#onglet-3").hide();
+
     }
 
     
