@@ -3,48 +3,56 @@
 
 class controleur_session {
 
+    private etat: boolean = false;
 
     constructor()
     {  }
 
-    verifier() : void
+    verifier(): JQueryXHR
     {
         let that = this;
             let req = $.ajax({
                 url: "../php/checkSession.php",
                 method: "POST",
                 dataType: "JSON",
-                success: (resultat) => {that.etat(resultat); },
+                success: (resultat) => { that.setEtat(resultat); },
                 error: (error) => { console.log(error); }
-            });
-           
+        });
+
+            return req; 
     }
 
-    etat(b: boolean): boolean
+    setEtat(b: boolean): void
     {
-        this.verifier();
-        return b;
+        this.etat = b;        
     }
 
     login() : void
     {
-        if (this.etat)
-        {
-            window.location.href = "../html/dashboard.html";
-        }
+        let that = this;
+        this.verifier().then(function () {
+            if (that.etat) {
+                window.location.href = "../html/dashboard.html";
+            }
+        });
+
+       
     }
 
     dashboard() : void
     {
-        if (!this.etat) {
-            window.location.href = "../html/login.html";
-        }
+        let that = this;
+        this.verifier().then(function () {
+            if (!that.etat) {
+                window.location.href = "../html/login.html";
+            }
+        });
     }
 
     finSession() : void
     {
         let req = $.ajax({
-            url: "php/finSession.php",
+            url: "../php/finSession.php",
             success: (resultat) => { console.log("Deconnexion"); },
             error: (error) => { console.log("Erreur deconnexion"); }
 

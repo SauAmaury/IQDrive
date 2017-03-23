@@ -20,7 +20,8 @@ class Vue_dash implements IVue {
     evenement()
     {
         let that = this;
-        $("#lg").click(function () {
+        $("#lg").click(function (event) {
+            event.preventDefault();
             that.Controleur_dash.deconnexion();       
         });
 
