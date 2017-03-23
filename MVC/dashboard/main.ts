@@ -6,14 +6,12 @@ class Main_dashboard
 {
 
     private controleur: Controleur_dash;
-    private ctrl_session: controleur_session;
     private vue: Vue_dash;
 
 
   constructor()
   {
-      this.ctrl_session = new controleur_session();
-      this.ctrl_session.dashboard();
+
       this.controleur = new Controleur_dash();
       this.vue = new Vue_dash(this.controleur);
 

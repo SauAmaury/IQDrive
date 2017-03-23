@@ -6,20 +6,22 @@
 class Controleur_dash implements IControleur {
 
     private vue: Vue_dash;
-    private controleur_session: controleur_session;
+    private ctrl_session: controleur_session;
 
     constructor()
-    {}
+    {
+        this.ctrl_session = new controleur_session();
+        this.ctrl_session.dashboard();
+
+    }
 
     initialiser(v: Vue_dash)
     {
         this.vue = new Vue_dash(this);      
-        this.controleur_session = new controleur_session();
-        this.controleur_session.dashboard();
     }
 
     deconnexion()
-    { this.controleur_session.finSession(); }
+    { this.ctrl_session.finSession(); }
 
            
             

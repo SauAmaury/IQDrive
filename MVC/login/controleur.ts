@@ -7,19 +7,20 @@
 
 class Controleur implements IControleur {
 
-    private controleursession: controleur_session;   
+    private ctrl_session: controleur_session;   
     private vue: Vue;
     private co: IConnexion;
 
 
             constructor()
-            { }
+            {
+            this.ctrl_session = new controleur_session();
+            this.ctrl_session.login();
+            }
 
             initialiser(v: Vue)
             {
                 this.vue = v;
-                this.controleursession = new controleur_session();
-                this.controleursession.login();
             }
 
             checkIdent(lg:string,mdp:string) 
@@ -38,8 +39,19 @@ class Controleur implements IControleur {
                 }
             }
 
-            deconnexion()
-            { this.co.close(); }
+            setInscription(lg: string, mdp: string, mdp2: string)
+            {
+                if (mdp != mdp2) {
+                    console.log("Mot de passe différend");                //erreur
+
+                } else {
+                    let ins: Inscription = new Inscription(lg, mdp);
+                    ins.initialiser(this);
+                    ins.inscrire();
+                    this.checkIdent(lg,mdp);
+                }
+            }
+        
 
             
 }
