@@ -13,16 +13,9 @@
 
     <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Animation library for notifications   -->
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
-
-    <!--  Light Bootstrap Table core CSS    -->
     <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
-
-
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
+    <link href="./style/css/login.css" />
 
 
     <!--     Fonts and icons     -->
@@ -57,12 +50,21 @@
                         <p>Dashboard</p>
                     </li>
                 </a>
+
+                <li id="upload">
+                    <a>
+                        <i class="pe-7s-upload"></i>
+                        <p>Upload</p>
+                    </a>
+                </li>
+
                 <li id="user">
                     <a>
                         <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
+                        <p>Profile</p>
                     </a>
                 </li>
+               
               
                 
            
@@ -212,10 +214,17 @@
                             <p>Dashboard</p>                      
                     </li>
                     </a>
-                    <li id="user-2" class="active">
+                    <li id="upload" class="active">
+                        <a>
+                            <i class="pe-7s-upload"></i>
+                            <p>Upload</p>
+                        </a>
+                    </li>
+
+                    <li id="user-2">
                         <a>
                             <i class="pe-7s-user"></i>
-                            <p>User Profile</p>
+                            <p>Profile</p>
 </li>
                     </a>
 
@@ -302,7 +311,8 @@
 
             <div class="content">
                 <div class="container-fluid">
-
+                    <input type="file" class="btn btn-block btn-fill "  name="fichier" id="f">
+                    <input class="btn btn-lg btn-primary btn-block" id="submit"  value="Envoyer !" name="ok" />
 
                 </div>
             </div>
@@ -362,16 +372,23 @@
                 </div>
 
                 <ul class="nav">
-                    <li>
-                        <a href="dashboard.html">
+                    <li id="main-3">
+                        <a>
                             <i class="pe-7s-graph"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="user.html">
+
+                    <li id="upload-3">
+                        <a>
+                            <i class="pe-7s-upload"></i>
+                            <p>Upload</p>
+                        </a>
+                    </li>
+                    <li id="user-3" class="active">
+                        <a>
                             <i class="pe-7s-user"></i>
-                            <p>User Profile</p>
+                            <p>Profile</p>
                         </a>
                     </li>
 

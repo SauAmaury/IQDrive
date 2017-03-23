@@ -11,9 +11,9 @@ class Vue_dash implements IVue {
         this.Controleur_dash = c;
         this.evenement();
         $("#onglet-1").show();
-        console.log("Montrer 1");
         $("#onglet-2").hide();
-        console.log("Cacher 2");
+        $("#onglet-3").hide();
+  
         
     }
 
@@ -25,19 +25,23 @@ class Vue_dash implements IVue {
         });
 
                         
-        $("#main,#main2").click(function(){
+        $("#main,#main-2,#main-3").click(function(){
             $("#onglet-1").show();
-            console.log("Montrer 1");
             $("#onglet-2").hide();
-            console.log("Cacher 2");
+            $("#onglet-3").hide();
         });
 
-        $("#user,#user2").click(function () {
+        $("#upload,#upload-2,#upload-3").click(function () {
             $("#onglet-1").hide();
-            console.log("Montrer 2");
             $("#onglet-2").show();
-            console.log("Cacher 1");
+            $("#onglet-3").hide();
         });
+        $("#user,#user-2,#user-3").click(function () {
+            $("#onglet-1").hide();
+            $("#onglet-2").hide();
+            $("#onglet-3").show();
+        });
+
 
     }
 
