@@ -14,6 +14,7 @@ $res = false;
 $user = $bdd->getConnexion()->prepare("SELECT * FROM member WHERE login = :login AND password = :password");
 
     $user->bindParam(":login",$pseudoconnect);
+    $user->bindParam(":login",$pseudoconnect);
     $user->bindParam(":password",$mdpconnect);
     $user->execute();
 

@@ -45,15 +45,6 @@ class Connexion implements IConnexion
         return res;
     }
 
-    close()
-    {
-        let req = $.ajax({
-            url: "php/finSession.php",
-            success: (resultat) => { console.log("Deconnexion"); },
-            error: (error) => { console.log("Erreur deconnexion"); }
-
-        });     
-        
-    }
+  
 
 }
