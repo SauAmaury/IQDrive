@@ -26,21 +26,21 @@ class Vue_dash implements IVue {
         });
 
                         
-        $("#main,#main-2,#main-3").click(function(){
-            $("#onglet-1").show();
+        $("#main,#main-2,#main-3").click(function () {
+            $("#onglet-1").fadeIn();
             $("#onglet-2").hide();
             $("#onglet-3").hide();
         });
 
         $("#upload,#upload-2,#upload-3").click(function () {
             $("#onglet-1").hide();
-            $("#onglet-2").show();
+            $("#onglet-2").fadeIn();
             $("#onglet-3").hide();
         });
         $("#user,#user-2,#user-3").click(function () {
             $("#onglet-1").hide();
             $("#onglet-2").hide();
-            $("#onglet-3").show();
+            $("#onglet-3").fadeIn();
         });
 
 
