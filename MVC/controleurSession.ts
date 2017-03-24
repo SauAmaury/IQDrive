@@ -1,5 +1,5 @@
-/// <reference path="../../lib/jquery.d.ts" />
-/// <reference path="../../lib/jqueryui.d.ts" />
+/// <reference path="../lib/jquery.d.ts" />
+/// <reference path="../lib/jqueryui.d.ts" />
 
 class controleur_session {
 

@@ -1,5 +1,6 @@
 /// <reference path="../../lib/jquery.d.ts" />
 /// <reference path="../../lib/jqueryui.d.ts" />
+///<reference path="../controleurSession.ts"/>
 
 
 

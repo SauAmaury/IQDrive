@@ -26,7 +26,7 @@ class Controleur implements IControleur {
 
             checkIdent(lg:string,mdp:string) 
             {
-                this.co = new Connexion(lg, mdp);
+                this.co = new FakeBDD(lg, mdp);
                 this.co.initialiser(this);
                 this.co.request();                
             }
@@ -45,18 +45,18 @@ class Controleur implements IControleur {
             setInscription(lg: string, mdp: string, mdp2: string)
             {
                 if (mdp != mdp2) {
-                    this.vue.Erreur("Les mots de passe doivent être identique");
+                    this.vue.Erreur("Les mots de passe doivent ï¿½tre identique");
                 }else if (mdp =="") {
-                    this.vue.Erreur("Le mot de passe ne doit pas être vide");
+                    this.vue.Erreur("Le mot de passe ne doit pas ï¿½tre vide");
                 } else if (lg == "") {
-                    this.vue.Erreur("L'identifiant ne doit pas être vide")
+                    this.vue.Erreur("L'identifiant ne doit pas ï¿½tre vide")
                 }else {
                     let ins: Inscription = new Inscription(lg, mdp);
                     ins.initialiser(this);
                     if (ins.estInscrit()) {
                         this.checkIdent(lg, mdp);
                     } else {
-                        this.vue.Erreur("L'indentifiant existe déjà ou une erreur inconnu s'est produite");
+                        this.vue.Erreur("L'indentifiant existe dï¿½jï¿½ ou une erreur inconnu s'est produite");
                     }
                     
                 }

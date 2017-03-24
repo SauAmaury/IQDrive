@@ -9,9 +9,9 @@ class Chargement implements Deroutable, IUpload
 	{
 	}
 
-	public LierFormulaire(idFormulaire: String): void
+	public LierFormulaire(idFormulaire: string): void
 	{
-		this.form = $(idFormulaire);
+		this.form = new Formulaire(idFormulaire);
 	}
 
 
@@ -36,10 +36,7 @@ class Chargement implements Deroutable, IUpload
 			processData: false,
 			data: contenu,
 			success: (s) => {
-				let afficheur: Affichable = new AfficheurPrincipal();
-				let sub: string = s;
-				sub = sub.substr(1, sub.length-2);
-				afficheur.afficher(sub);
+				console.log("afficheur ok");
 			},
 			error: (err) => {
 				console.log(err);
