@@ -1,12 +1,17 @@
-///<reference path="Affichable.ts"/>
 ///<reference path="formulaire.ts"/>
 ///<reference path="Deroutable.ts"/>
-///<reference path="AfficheurPrincipal.ts"/>
 
-class Chargement implements Deroutable
+class Chargement implements Deroutable, IUpload
 {
-	constructor(private form: Formulaire)
+	private form: Formulaire;
+
+	constructor()
 	{
+	}
+
+	public LierFormulaire(idFormulaire: String): void
+	{
+		this.form = $(idFormulaire);
 	}
 
 

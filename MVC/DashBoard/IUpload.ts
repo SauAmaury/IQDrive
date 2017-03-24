@@ -1,4 +1,4 @@
 interface IUpload
 {
-	LierFormulaire(idFormulaire: String);
+	LierFormulaire(idFormulaire: String): void;
 }

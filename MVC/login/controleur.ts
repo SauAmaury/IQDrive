@@ -3,6 +3,7 @@
 ///<reference path="connexion.ts"/>
 ///<reference path="vue.ts"/>
 ///<reference path="../Mock/FakeBDD.ts"/>
+///<reference path="../IControleur.ts"/>
 
 
 class Controleur implements IControleur{
