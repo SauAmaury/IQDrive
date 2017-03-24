@@ -12,22 +12,25 @@ $res = false;
 
 
 $user = $bdd->getConnexion()->prepare("INSERT INTO member (login,password) VALUES (:login,:password)");
+$query = $bdd->getConnexion()->prepare("SELECT login FROM member WHERE login = :login");
 
     $user->bindParam(":login",$pseudoconnect);
+    $query->bindParam(":login",$pseudoconnect);
     $user->bindParam(":password",$mdpconnect);
 
+    $query->execute();
+    $nb = $query->rowCount();
 
+    if($nb==0)
+    {
+        if ($user->execute() == true)
+        {
+            $res = true;
+        }
 
-
-       if ($user->execute() == true)
-       {
-           $res = true;
-       }
-       else
-       {
-           $res = false;
-       }
-
+    }else{
+        $res = false;
+    }
        echo json_encode($res);
 
 

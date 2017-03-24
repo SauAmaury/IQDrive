@@ -35,20 +35,29 @@ class Controleur implements IControleur {
                
                 if (b) {
                     window.location.href = "../html/dashboard.html";
+                } else {
+                    this.vue.Erreur("Identifiant ou mot de passe incorrect");
                 }
-                this.vue.conneted(b);
+                
             }
 
             setInscription(lg: string, mdp: string, mdp2: string)
             {
                 if (mdp != mdp2) {
-                             //erreur
-
-                } else {
+                    this.vue.Erreur("Les mots de passe doivent être identique");
+                }else if (mdp =="") {
+                    this.vue.Erreur("Le mot de passe ne doit pas être vide");
+                } else if (lg == "") {
+                    this.vue.Erreur("L'identifiant ne doit pas être vide")
+                }else {
                     let ins: Inscription = new Inscription(lg, mdp);
                     ins.initialiser(this);
-                    ins.inscrire();
-                    this.checkIdent(lg,mdp);
+                    if (ins.estInscrit()) {
+                        this.checkIdent(lg, mdp);
+                    } else {
+                        this.vue.Erreur("L'indentifiant existe déjà ou une erreur inconnu s'est produite");
+                    }
+                    
                 }
             }
         

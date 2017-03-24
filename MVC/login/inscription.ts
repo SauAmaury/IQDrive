@@ -8,6 +8,7 @@ class Inscription {
 
     private login: string;
     private mdp: string;
+    private res: boolean = false;
     private ctrl: Controleur;
 
     constructor(l: string, m: string)
@@ -19,19 +20,25 @@ class Inscription {
     initialiser(c: Controleur) : void
     { this.ctrl = c; }
 
-    inscrire() : void
-    {
+    inscrire(): JQueryXHR {
         let that = this;
         let req = $.ajax({
             url: "../php/inscription.php",
             method: "POST",
             data: { username: that.login, password: that.mdp },
             dataType: "JSON",
-            success: (resultat) => { that.ctrl.sendRes(resultat); },
+            success: (resultat) => { that.res = resultat; },
             error: (error) => { console.log(error); }
-        });      
-        
+        });
+        return req;
     }
+        estInscrit() : boolean
+        {
+            this.inscrire().then(function () {
+               //on attend
+            });
+            return this.res;
+        }
 
     
 

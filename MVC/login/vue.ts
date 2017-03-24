@@ -53,9 +53,8 @@ class Vue implements IVue {
   }
 
 
-  conneted(b: boolean) {
-      if (!b) {
-          $("#alt").html("Mot de passe ou identifiant incorrect ");
-    } 
-  }
+  Erreur(s:string) {      
+          $("#alt").html(s);
+    }
+  
 }
