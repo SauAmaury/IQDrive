@@ -6,7 +6,7 @@ $bdd = new connexionBDD();
 $res = false;
 
     $pseudoconnect = $_POST['username'];
-    $mdpconnect = $_POST['password'];
+    $mdpconnect = md5($_POST['password']);
 
 
 
