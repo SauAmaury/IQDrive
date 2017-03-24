@@ -11,7 +11,7 @@ class Vue implements IVue {
   constructor(c: Controleur) {
     this.ctrl = c;
     this.validate();
-    $("#onglet").show();
+    $("#onglet").fadeIn();
     $("#onglet-2").hide();
   }
 
@@ -39,14 +39,14 @@ class Vue implements IVue {
         .click(function (event) {
             event.preventDefault();
             $("#onglet").hide();
-            $("#onglet-2").show();
+            $("#onglet-2").fadeIn();
             
         });
 
     $("#dji")
         .click(function (event) {
             event.preventDefault();
-            $("#onglet").show();
+            $("#onglet").fadeIn();
             $("#onglet-2").hide();
         });
 
@@ -54,10 +54,8 @@ class Vue implements IVue {
 
 
   conneted(b: boolean) {
-    if (b == true) {
-      console.log("CONNECTER");
-    } else {
-      console.log("pas connecter");
-    }
+      if (!b) {
+          $("#alt").html("Mot de passe ou identifiant incorrect ");
+    } 
   }
 }

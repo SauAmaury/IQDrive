@@ -32,17 +32,17 @@ class Controleur implements IControleur {
 
             sendRes(b: boolean)
             {
-                this.vue.conneted(b);
-                if (b)
-                {
+               
+                if (b) {
                     window.location.href = "../html/dashboard.html";
                 }
+                this.vue.conneted(b);
             }
 
             setInscription(lg: string, mdp: string, mdp2: string)
             {
                 if (mdp != mdp2) {
-                    console.log("Mot de passe différend");                //erreur
+                             //erreur
 
                 } else {
                     let ins: Inscription = new Inscription(lg, mdp);
