@@ -12,6 +12,7 @@ class Chargement implements Deroutable, IUpload
 	public LierFormulaire(idFormulaire: string): void
 	{
 		this.form = new Formulaire(idFormulaire);
+		this.TraiterChargement();
 	}
 
 
