@@ -46,5 +46,8 @@ class Vue_dash implements IVue {
 
     }
 
-    
+    afficheIdentifiant(s: string): void
+    {
+        $('[id^="pseudo"]').html(s);
+    }
 }
