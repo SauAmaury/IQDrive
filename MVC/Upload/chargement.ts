@@ -1,12 +1,18 @@
-///<reference path="Affichable.ts"/>
 ///<reference path="formulaire.ts"/>
 ///<reference path="Deroutable.ts"/>
-///<reference path="AfficheurPrincipal.ts"/>
 
-class Chargement implements Deroutable
+class Chargement implements Deroutable, IUpload
 {
-	constructor(private form: Formulaire)
+	private form: Formulaire;
+
+	constructor()
 	{
+	}
+
+	public LierFormulaire(idFormulaire: string): void
+	{
+		this.form = new Formulaire(idFormulaire);
+		this.TraiterChargement();
 	}
 
 
@@ -31,10 +37,7 @@ class Chargement implements Deroutable
 			processData: false,
 			data: contenu,
 			success: (s) => {
-				let afficheur: Affichable = new AfficheurPrincipal();
-				let sub: string = s;
-				sub = sub.substr(1, sub.length-2);
-				afficheur.afficher(sub);
+				console.log("afficheur ok");
 			},
 			error: (err) => {
 				console.log(err);

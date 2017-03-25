@@ -55,6 +55,7 @@
                     <a>
                         <i class="pe-7s-upload"></i>
                         <p>Upload</p>
+
                     </a>
                 </li>
 
@@ -183,7 +184,7 @@
                 </nav>
                 <p class="copyright pull-right">
                     &copy;
-                    <script>document.write(new Date().getFullYear())</script> <a href="https://github.com/diabolo52/IQDrive/tree/master">Github</a>, Réaliser dans le cadre d'un projet 
+                    <script>document.write(new Date().getFullYear())</script> <a href="https://github.com/diabolo52/IQDrive/tree/master">Github</a>, Réalis&eacute; dans le cadre d'un projet 
                 </p>
             </div>
         </footer>
@@ -312,8 +313,10 @@
 
             <div class="content">
                 <div class="container-fluid">
+                    <form method="POST" action="../php/upload.php" id="formulaire" enctype="multipart/form-data">
                     <input type="file" class="btn btn-block btn-fill "  name="fichier" id="f">
-                    <input class="btn btn-lg btn-primary btn-block" id="submit"  value="Envoyer !" name="ok" />
+                    <input type="submit" class="btn btn-lg btn-primary btn-block" id="submit"  value="Envoyer !" name="ok" />
+                    </form>
 
                 </div>
             </div>
@@ -347,7 +350,7 @@
                     </nav>
                     <p class="copyright pull-right">
                         &copy;
-                        <script>document.write(new Date().getFullYear())</script> <a href="https://github.com/diabolo52/IQDrive/tree/master">Github</a>, Réaliser dans le cadre d'un projet 
+                        <script>document.write(new Date().getFullYear())</script> <a href="https://github.com/diabolo52/IQDrive/tree/master">Github</a>, Réalis&eacute; dans le cadre d'un projet 
                     </p>
                 </div>
             </footer>
@@ -510,7 +513,7 @@
                     </nav>
                     <p class="copyright pull-right">
                         &copy;
-                        <script>document.write(new Date().getFullYear())</script> <a href="https://github.com/diabolo52/IQDrive/tree/master">Github</a>, Réaliser dans le cadre d'un projet 
+                        <script>document.write(new Date().getFullYear())</script> <a href="https://github.com/diabolo52/IQDrive/tree/master">Github</a>, Réalis&eacute; dans le cadre d'un projet 
                     </p>
                 </div>
             </footer>
@@ -532,7 +535,12 @@
     <script src="../MVC/dashboard/vue.js"></script>
     <script src="../MVC/controleurSession.js"></script>
     <script src="../MVC/login/connexion.js"></script>
+    <script src="../MVC/Mock/FakeControleurSession.js"></script>
+    <script src="../MVC/Upload/chargement.js"></script>
+    <script src="../MVC/Upload/formulaire.js"></script>
+    <script src="../MVC/Upload/Deroutable.js"></script>
     <script src="../MVC/dashboard/utilisateur.js"></script>
+
 
 
 

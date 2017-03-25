@@ -1,7 +1,8 @@
-/// <reference path="../../lib/jquery.d.ts" />
-/// <reference path="../../lib/jqueryui.d.ts" />
+/// <reference path="../lib/jquery.d.ts" />
+/// <reference path="../lib/jqueryui.d.ts" />
+///<reference path="IControleurSession.ts"/>
 
-class controleur_session {
+class controleur_session implements IControleurSession{
 
     private etat: boolean = false;
 
