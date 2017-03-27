@@ -9,7 +9,7 @@ class Controleur_dash implements IControleur {
 
     private vue: Vue_dash;
 
-    private ctrl_session: controleur_session;
+    private ctrl_session: IControleurSession;
     private utilisateur: Utilisateur;
 
 
