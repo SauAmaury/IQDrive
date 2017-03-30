@@ -8,13 +8,17 @@ class Vue_dash implements IVue {
 
     constructor(c: Controleur_dash)
     {
+        this.intialiser();
         this.Controleur_dash = c;
-        this.evenement();
-        $("#onglet-1").show();
-        $("#onglet-2").hide();
-        $("#onglet-3").hide();
-  
-        
+        this.evenement();     
+    }
+
+    intialiser()
+    {
+        $("#dash").show();
+        $("#upload").hide();
+        $("#profile").hide();
+        $("#main").addClass("active");
     }
 
     evenement()
@@ -26,21 +30,27 @@ class Vue_dash implements IVue {
         });
 
                         
-        $("#main,#main-2,#main-3").click(function () {
-            $("#onglet-1").fadeIn();
-            $("#onglet-2").hide();
-            $("#onglet-3").hide();
+        $("#main").click(function () {
+            $("#main").addClass("active");
+            $("#upl,#user").removeClass();
+            $("#dash").show();
+            $("#upload").hide();
+            $("#profile").hide();
         });
 
-        $("#upload,#upload-2,#upload-3").click(function () {
-            $("#onglet-1").hide();
-            $("#onglet-2").fadeIn();
-            $("#onglet-3").hide();
+        $("#upl").click(function () {
+            $("#upl").addClass("active");
+            $("#main,#user").removeClass();
+            $("#dash").hide();
+            $("#upload").show();
+            $("#profile").hide();
         });
-        $("#user,#user-2,#user-3").click(function () {
-            $("#onglet-1").hide();
-            $("#onglet-2").hide();
-            $("#onglet-3").fadeIn();
+        $("#user").click(function () {
+            $("#user").addClass("active");
+            $("#main,#upl").removeClass();
+            $("#dash").hide();
+            $("#upload").hide();
+            $("#profile").show();
         });
 
 
@@ -48,6 +58,6 @@ class Vue_dash implements IVue {
 
     afficheIdentifiant(s: string): void
     {
-        $('[id^="pseudo"]').html(s);
+        $("#pseudo").html(s);
     }
 }
